@@ -43,7 +43,7 @@ graph TD
     C --> D[TodoList]
     D --> E[AddTodoForm]
     D --> F[TodoItem]
-    D --> G[Toast]
+    A --> H[Toaster_sonner]
     
 
 ```
@@ -58,7 +58,7 @@ flowchart LR
     B -- "updates todos[]" --> C[TodoItem]
     C -- "onDelete(id)" --> B
     C -- "onToggle(id)" --> B
-    B -- "toast events" --> D[Toaster]
+    B -- "triggers toast events via sonner" --> D[Toaster]
 
 ```
 
@@ -148,5 +148,6 @@ http://localhost:3000
 - ⚡ Використання **React Hooks** для управління станом
 - 🎨 Сучасний UI з **TailwindCSS** та анімаціями
 - 📱 **Responsive дизайн** для всіх пристроїв
+
 
 
