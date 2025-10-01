@@ -4,9 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f93c2c0-a8f3-4454-8c56-73ac9426c6d3" name="Changes" comment="">
+    <list default="true" id="1f93c2c0-a8f3-4454-8c56-73ac9426c6d3" name="Changes" comment="lab 4">
+      <change afterPath="$PROJECT_DIR$/lab4/components/layout/Footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/layout/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/todo/AddTodoForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/todo/TodoApp.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/todo/TodoFilters.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/todo/TodoItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/todo/TodoList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/todo/TodoPagination.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/todo/TodoStats.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/todo/TodoStatus.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/todo/useTodoActions.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/ui/DragonCursor.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/components/ui/LoadingSpinner.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/contexts/ThemeContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/contexts/TodosContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/hooks/useDebounce.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/hooks/useTodosActions.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/hooks/useTodosData.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/hooks/useTodosFilterSearchPagination.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab4/lib/utils/notify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab4/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab4/components/Toast.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/api/todos.js" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/api/todos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/app/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/app/layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/app/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/components/AddTodoForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/components/TodoApp.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/components/TodoFilters.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/components/TodoItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/components/TodoList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/components/TodoPagination.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/components/TodoStatus.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/components/utils/notify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/hooks/useTodos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/hooks/useTodos.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +59,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/REACT/todo_list&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/REACT/todo_list/lab4/hooks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\GTA\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\REACT\todo_list\lab4\hooks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\REACT\todo_list\lab4\lib" />
+      <recent name="D:\REACT\todo_list\lab4\components\ui" />
+      <recent name="D:\REACT\todo_list\lab4\components\todo" />
+      <recent name="D:\REACT\todo_list\lab4\components\layout" />
+      <recent name="D:\REACT\todo_list\lab4\contexts" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -55,7 +102,12 @@
       <workItem from="1759127469409" duration="2132000" />
       <workItem from="1759171994320" duration="52000" />
       <workItem from="1759250290395" duration="885000" />
-      <workItem from="1759351483912" duration="417000" />
+      <workItem from="1759351483912" duration="559000" />
+      <workItem from="1759353081323" duration="903000" />
+      <workItem from="1759514716318" duration="606000" />
+      <workItem from="1759741771244" duration="4137000" />
+      <workItem from="1759835976970" duration="20259000" />
+      <workItem from="1759858686566" duration="8554000" />
     </task>
     <task id="LOCAL-00001" summary="add architecture + Fetching Data. Custom hook.">
       <option name="closed" value="true" />
@@ -65,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759127591822</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lab 4">
+      <option name="closed" value="true" />
+      <created>1759351951758</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759351951758</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,6 +144,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add architecture + Fetching Data. Custom hook." />
-    <option name="LAST_COMMIT_MESSAGE" value="add architecture + Fetching Data. Custom hook." />
+    <MESSAGE value="lab 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab 4" />
   </component>
 </project>
