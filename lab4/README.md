@@ -36,7 +36,6 @@ todo_list/lab4/
 │   ├── TodoFilters.jsx       # Фільтри + пошук
 │   ├── TodoStatus.jsx        # Стани: loading, error, empty
 │   ├── TodoPagination.jsx    # Пагінація з вибором кількості
-│   ├── Toast.jsx             # Кастомний toast (не використовується)
 │   └── utils/
 │       └── notify.js         # Обгортки для Sonner toast
 └── hooks/
@@ -90,52 +89,95 @@ graph TD
 
 ```mermaid
 flowchart TB
-    subgraph API["External API"]
-        DummyJSON[DummyJSON API]
+    subgraph API["🌐 External API"]
+        DummyJSON[DummyJSON API<br/>todos endpoint]
     end
     
-    subgraph Hook["Custom Hook"]
-        useTodos[useTodos hook]
+    subgraph Hook["⚡ Custom Hook"]
+        useTodos["useTodos(50)<br/>hooks/useTodos.js"]
     end
     
-    subgraph State["State Management"]
-        TodosState[todos - array]
-        LoadingState[isLoading - boolean]
-        ErrorState[error - object]
+    subgraph GlobalState["📦 Global State"]
+        TodosState[todos: array]
+        LoadingState[isLoading: boolean]
+        ErrorState[error: object]
+        Methods[addTodo, deleteTodo,<br/>toggleTodo, refresh]
     end
     
-    subgraph Components["UI Components"]
-        TodoList[TodoList]
+    subgraph LocalState["🔧 Local State in TodoList"]
+        FilterState[filter: all/active/completed]
+        QueryState[query: search string]
+        PageState[currentPage: number<br/>perPage: number]
+    end
+    
+    subgraph Components["🎨 UI Components"]
+        TodoList[TodoList<br/>master component]
         AddForm[AddTodoForm]
         TodoItem[TodoItem × N]
         Filters[TodoFilters]
         Pagination[TodoPagination]
+        Status[TodoStatus]
     end
     
-    subgraph Notifications["Notifications"]
-        Sonner[Sonner Toaster]
+    subgraph Utils["🛠️ Utilities"]
+        Notify[notify.js<br/>success/error/info]
+        API_File[api/todos.js<br/>fetchTodosApi<br/>deleteTodoApi<br/>toggleTodoApi]
     end
     
-    DummyJSON -->|fetchTodosApi| useTodos
-    useTodos -->|initial load| TodosState
-    useTodos --> LoadingState
-    useTodos --> ErrorState
+    subgraph Notifications["🔔 Notifications"]
+        Sonner[Sonner Toaster<br/>position: top-right]
+    end
     
-    TodosState --> TodoList
-    TodoList --> AddForm
-    TodoList --> Filters
-    TodoList --> TodoItem
-    TodoList --> Pagination
+    %% API Flow
+    DummyJSON <-->|axios calls| API_File
+    API_File --> useTodos
     
-    AddForm -->|addTodo| useTodos
-    TodoItem -->|toggleTodo| useTodos
-    TodoItem -->|deleteTodo| useTodos
+    %% Hook to State
+    useTodos --> GlobalState
     
-    useTodos -->|API calls| DummyJSON
-    useTodos -->|notify| Sonner
+    %% State to Components
+    GlobalState --> TodoList
+    LocalState -.stored in.-> TodoList
     
-    Filters -->|filter/search| TodoList
-    Pagination -->|page change| TodoList
+    %% TodoList distributes data
+    TodoList -->|props| AddForm
+    TodoList -->|props| Filters
+    TodoList -->|props| Status
+    TodoList -->|props| Pagination
+    TodoList -->|filtered & paginated| TodoItem
+    
+    %% User Actions
+    AddForm -->|onAdd callback| TodoList
+    TodoItem -->|onToggle callback| TodoList
+    TodoItem -->|onDelete callback| TodoList
+    Filters -->|setFilter, setQuery| LocalState
+    Pagination -->|setCurrentPage, setPerPage| LocalState
+    
+    %% TodoList calls Hook methods
+    TodoList -->|addTodo| Methods
+    TodoList -->|toggleTodo| Methods
+    TodoList -->|deleteTodo| Methods
+    TodoList -->|refresh| Methods
+    
+    %% Methods update API
+    Methods --> API_File
+    
+    %% Notifications
+    TodoList -->|notify.success/error/info| Notify
+    Notify --> Sonner
+    
+    %% Styling
+    classDef apiStyle fill:#e1f5ff,stroke:#0288d1,stroke-width:2px
+    classDef hookStyle fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+    classDef stateStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef componentStyle fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    classDef utilStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    
+    class DummyJSON,API_File apiStyle
+    class useTodos hookStyle
+    class GlobalState,LocalState stateStyle
+    class TodoList,AddForm,TodoItem,Filters,Pagination,Status componentStyle
+    class Notify,Sonner utilStyle
 ```
 
 ### Опис Data Flow
