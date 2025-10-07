@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f93c2c0-a8f3-4454-8c56-73ac9426c6d3" name="Changes" comment="Lab 5-6: React Design Patterns">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab4/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="1f93c2c0-a8f3-4454-8c56-73ac9426c6d3" name="Changes" comment="Update README.md" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +18,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -79,7 +79,7 @@
       <workItem from="1759514716318" duration="606000" />
       <workItem from="1759741771244" duration="4137000" />
       <workItem from="1759835976970" duration="20259000" />
-      <workItem from="1759858686566" duration="10037000" />
+      <workItem from="1759858686566" duration="10332000" />
     </task>
     <task id="LOCAL-00001" summary="add architecture + Fetching Data. Custom hook.">
       <option name="closed" value="true" />
@@ -105,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759868330987</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1759869604447</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759869604447</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,8 +133,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add architecture + Fetching Data. Custom hook." />
     <MESSAGE value="lab 4" />
-    <MESSAGE value="Update README.md" />
     <MESSAGE value="Lab 5-6: React Design Patterns" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lab 5-6: React Design Patterns" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
 </project>
