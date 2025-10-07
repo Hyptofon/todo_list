@@ -4,6 +4,63 @@
 Повнофункціональний додаток для керування задачами з фільтрацією, пошуком, пагінацією та повідомленнями (**Sonner toast**).
 
 ---
+# 📝 Todo App - Task Management
+
+Сучасний список завдань побудований на **Next.js 14 + React** з використанням **Hooks**, **TailwindCSS** та **REST API**.  
+Повнофункціональний додаток для керування задачами з фільтрацією, пошуком, пагінацією та повідомленнями (**Sonner toast**).
+
+---
+
+## Table of Contents
+
+- [🚀 Стек технологій](#-стек-технологій)
+- [📂 Структура проєкту](#-структура-проєкту)
+- [🌳 Component Tree (CT)](#-component-tree-ct)
+   - [Опис Component Tree](#опис-component-tree)
+- [🔄 Data Flow Diagram (DF)](#-data-flow-diagram-df)
+- [📋 Опис Data Flow](#-опис-data-flow)
+- [🎨 Design Patterns](#-design-patterns)
+   - [1. Provider Pattern (Context API)](#1-provider-pattern-context-api)
+   - [2. Custom Hook Pattern (композиція логіки)](#2-custom-hook-pattern-композиція-логіки)
+   - [3. Container/Presenter Pattern (Smart/Dumb Components)](#3-containerpresenter-pattern-smartdumb-components)
+   - [4. Facade Pattern (спрощення API)](#4-facade-pattern-спрощення-api)
+   - [5. Observer Pattern (React Context + Hooks)](#5-observer-pattern-react-context--hooks)
+   - [6. Optimistic Update Pattern](#6-optimistic-update-pattern)
+   - [7. Memoization Pattern (оптимізація продуктивності)](#7-memoization-pattern-оптимізація-продуктивності)
+   - [8. Validation Pattern (Zod Schema)](#8-validation-pattern-zod-schema)
+   - [9. Composite Pattern (вкладені компоненти)](#9-composite-pattern-вкладені-компоненти)
+   - [10. Strategy Pattern (динамічна зміна поведінки)](#10-strategy-pattern-динамічна-зміна-поведінки)
+   - [11. Higher-Order Component Pattern (обгортки функціональності)](#11-higher-order-component-pattern-обгортки-функціональності)
+   - [12. Singleton Pattern (Context Provider)](#12-singleton-pattern-context-provider)
+   - [13. Render Props Pattern (callback functions)](#13-render-props-pattern-callback-functions)
+   - [14. Debounce Pattern (оптимізація пошуку)](#14-debounce-pattern-оптимізація-пошуку)
+   - [15. Module Pattern (інкапсуляція логіки)](#15-module-pattern-інкапсуляція-логіки)
+- [🔄 Типові сценарії використання](#-типові-сценарії-використання)
+   - [Сценарій 1: Додавання нового завдання](#сценарій-1-додавання-нового-завдання)
+   - [Сценарій 2: Видалення завдання](#сценарій-2-видалення-завдання)
+   - [Сценарій 3: Редагування завдання](#сценарій-3-редагування-завдання)
+   - [Сценарій 4: Зміна статусу завдання](#сценарій-4-зміна-статусу-завдання)
+   - [Сценарій 5: Фільтрація та пошук](#сценарій-5-фільтрація-та-пошук)
+   - [Сценарій 6: Обробка помилки завантаження](#сценарій-6-обробка-помилки-завантаження)
+- [⚙️ Основні Hooks](#️-основні-hooks)
+- [🔌 API інтеграція](#-api-інтеграція)
+   - [Модуль api/todos.js](#модуль-apitodosjs)
+- [▶️ Запуск проєкту](#️-запуск-проєкту)
+- [📌 Функціонал](#-функціонал)
+   - [✅ Основні можливості](#-основні-можливості)
+   - [🎨 Візуальні ефекти](#-візуальні-ефекти)
+- [🔧 Деталі реалізації](#-деталі-реалізації)
+   - [Управління станом](#управління-станом)
+   - [Оптимізація продуктивності](#оптимізація-продуктивності)
+   - [Обробка помилок](#обробка-помилок)
+   - [Стилізація](#стилізація)
+- [🎨 Кастомні анімації](#-кастомні-анімації)
+- [💡 Висновок](#-висновок)
+- [📝 Додаткові нотатки](#-додаткові-нотатки)
+   - [Особливості архітектури](#особливості-архітектури)
+   - [Можливі покращення](#можливі-покращення)
+
+---
 
 ## 🚀 Стек технологій
 
@@ -17,6 +74,10 @@
 - [Zod](https://zod.dev/) – валідація схем даних
 - [DummyJSON API](https://dummyjson.com/) – тестовий REST API для завдань
 - [Geist Font](https://vercel.com/font) – типографія від Vercel
+
+---
+
+**🔝 [Вернутися до змісту](#table-of-contents)**
 
 ---
 
@@ -59,7 +120,11 @@ todo_list/lab4/
 │   └── useDebounce.jsx       # Debounce хук
 └── lib/utils/
     └── notify.js             # Обгортки для Sonner toast
+    
+    
 ```
+
+**🔝 [Вернутися до змісту](#table-of-contents)**
 
 ---
 
@@ -119,6 +184,9 @@ graph TD
 - Використання Context API для уникнення prop drilling
 - Однонаправлений потік даних (top-down)
 - Компоненти максимально декомпозовані та переповторно використовувані
+
+---
+**🔝 [Вернутися до змісту](#table-of-contents)**
 
 ---
 
@@ -1091,6 +1159,10 @@ export default function RootLayout({ children }) {
 **Важливо:** `notify` викликається **ТІЛЬКИ з useTodoActions.jsx**, НЕ з хуків!
 
 ---
+
+**🔝 [Вернутися до змісту](#table-of-contents)**
+
+---
 ## 🎨 Design Patterns
 
 ### 1. **Provider Pattern** (Context API)
@@ -1752,6 +1824,9 @@ export const notify = {
 
 ---
 
+**🔝 [Вернутися до змісту](#table-of-contents)**
+
+---
 
 
 
@@ -1910,6 +1985,9 @@ export const notify = {
 - **TodoItem** – запобігає ре-рендеру якщо props не змінились
 
 ---
+**🔝 [Вернутися до змісту](#table-of-contents)**
+
+---
 
 ## 🔌 API інтеграція
 
@@ -1959,6 +2037,9 @@ export const editTodoApi = async (id, newTitle) => {
 - Axios обробляє помилки через try/catch в хуках
 
 ---
+**🔝 [Вернутися до змісту](#table-of-contents)**
+
+---
 
 ## ▶️ Запуск проєкту
 
@@ -2006,6 +2087,9 @@ http://localhost:3000
 - **Task animations** – плавне перетворення при зміні статусу
 - **Dragon cursor** – Canvas анімація з trailing effect
 - **Dark mode** – підтримка темної теми з oklch кольорами
+
+---
+**🔝 [Вернутися до змісту](#table-of-contents)**
 
 ---
 
@@ -2072,6 +2156,9 @@ const deleteTodo = useCallback(async (id) => {
 - **Custom classes** – `.glass-card`, `.gradient-bg`, `.hover-lift`
 - **Animations** – `@keyframes` для slideUp, scaleIn, float, glow
 - **Dark mode** – `.dark` клас з окремими значеннями змінних
+
+---
+**🔝 [Вернутися до змісту](#table-of-contents)**
 
 ---
 
@@ -2171,6 +2258,9 @@ const deleteTodo = useCallback(async (id) => {
 ```
 
 ---
+**🔝 [Вернутися до змісту](#table-of-contents)**
+
+---
 
 ## 💡 Висновок
 
@@ -2192,7 +2282,9 @@ const deleteTodo = useCallback(async (id) => {
 - 🔍 **Inline editing** з режимом Save/Cancel
 
 ---
+**🔝 [Вернутися до змісту](#table-of-contents)**
 
+---
 ## 📝 Додаткові нотатки
 
 ### Особливості архітектури:
